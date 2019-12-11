@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
  * @author DELL
  *
  */
-public class MyUtils {
+public class StringUtils {
 	
 
 	/**
