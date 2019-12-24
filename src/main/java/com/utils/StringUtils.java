@@ -29,14 +29,15 @@ public class StringUtils {
 	}
 	
 	
-	/**
-	 * 
-	 * @param url
-	 * @return
-	 */
-	public static boolean isUrl(String url) {
+/**
+ * 判断地址格式
+ * @param str
+ * @return
+ */
+	public static boolean isHttpUrl(String str){
+		
 		 //转换为小写
-        String str = url.toLowerCase();
+        str = str.toLowerCase();
         String regex = "^((https|http|ftp|rtsp|mms)?://)"  //https、http、ftp、rtsp、mms
                 + "?(([0-9a-z_!~*'().&=+$%-]+: )?[0-9a-z_!~*'().&=+$%-]+@)?" //ftp的user@  
                + "(([0-9]{1,3}\\.){3}[0-9]{1,3}" // IP形式的URL- 例如：199.194.52.184               
@@ -50,7 +51,6 @@ public class StringUtils {
                 + "((/?)|" // a slash isn't required if there is no file name  
                 + "(/[0-9a-z_!~*'().;?:@&=+$,%#-]+)+/?)$";  
         return  str.matches(regex);	
-		
 	}
 	
 	/**
