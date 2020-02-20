@@ -36,4 +36,43 @@ public class MathUtils {
      return s;
  }
 	
+ /**
+  * 根据经纬度计算环数
+  * @param x1
+  * @param y1
+  * @return
+  */
+ public static int getLooplevel(double x1,double y1) {
+		long round = Math.round( Math.sqrt( Math.pow(x1 - 39,2  ) +  Math.pow(y1 - 116,2  ) ));
+		if(round>0&&round<=15) {
+			return 2;
+		}else if(round>15&&round<=30) {
+			return 3;
+		}else if(round>30&&round<=40) {
+			return 4;
+		}else if(round>40&&round<=60) {
+			return 5;
+		}else if(round>60&&round<=70){
+			return 6;
+		}else {
+			return 7;
+		}
+ }
+ 
+/**
+ * 计算违规类型
+ */
+ public static String passtype(String typeid,int looplevel,String carid) {
+	 if(typeid.equals("A")&&looplevel==2) {
+		 return "摩托车A进入2环";
+	 }else if(typeid.equals("B")&&looplevel<=4){
+		 return "摩托车B进入4环";
+	 }else if(typeid.equals("C")&&carid.substring(0,1).equals("京")&&looplevel<=5) {
+		 return "外地牌照不能进入5环";
+	 }
+	return null;
+ }
+ 
+ 
+ 
 }

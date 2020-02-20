@@ -13,6 +13,7 @@ public class DateUtils {
 	  */
 	static final int millSecondsPerDay = 1000*60*60*24;
 	
+	
 	/**
 	 * 计算年龄
 	 */
@@ -146,7 +147,6 @@ public class DateUtils {
 		
 		return (date.getTime()<lastDayOfWeek.getTime().getTime() &&
 				date.getTime()>firstDayOfWeek.getTime().getTime() );
-
 	}
 	
 }
